@@ -1,0 +1,89 @@
+	<style>
+		table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+		}
+
+		td, th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+		}
+
+		tr:nth-child(even) {
+		background-color: #dddddd;
+		}
+	</style>
+	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+		<div class="row">
+			<ol class="breadcrumb">
+				<li><a href="#">
+					<em class="fa fa-home"></em>
+				</a></li>
+				<li class="active">Product</li>
+			</ol>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Table</h1>
+			</div>
+		</div><!--/.row-->
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default articles">
+					<div class="panel-heading">
+						Product Management											
+					</div>
+					<div class="panel-body articles-container">								
+						<div class="article">
+							<div class="col-xs-12">
+								
+								<table>
+									<tr>
+
+										<th>ID</th>
+										<th>Name</th>
+										<th>Category</th>
+										<th>Price</th>
+										<th>Image</th>
+										<th>Detail</th>
+										<th>Description</th>
+										<th>#</th>
+									</tr>
+
+									{{#products}}
+									<tr>
+										<td>{{_id}}</td>
+										<td>{{name}}</td>
+										<td>{{category}}</td>
+										<td>{{image}}</td>
+										<td>{{detail}}</td>
+										<td>{{description}}</td>																
+									</tr>
+									{{/products}}
+									
+									<span class="product-pagination" pageCurrent="{{pageCurrent}}">
+										<a href="?page={{pagePrev}}"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+										{{#pages}}
+											<a href="?page={{.}}">{{.}}</a>
+										{{/pages}}
+										<a href="?page={{pageNext}}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+									</span>									
+								</table>
+							</div>
+								
+							<div class="clear"></div>
+						</div><!--End .article-->
+					</div>
+				</div><!--End .articles-->								
+			</div><!--/.col-->					
+			<div class="col-sm-12">
+				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
+			</div>
+		</div><!--/.row-->
+	</div>	<!--/.main-->
+
+	<script src="/js/product-pagination.js"></script>
